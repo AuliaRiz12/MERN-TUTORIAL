@@ -4,9 +4,9 @@ const dotenv = require('dotenv').config()
 const port = process.env.PORT || 5000
 
 
-const app = express()
+const app = express = require('express')
 
 app.get('/api/goals',(req,re)=>{
-  res.json({message:'Get Goals'})  
+  res.json({message: 'Get Goals'})  
 })
 app.listen(port, () => console.log(`Server started on port ${port}`))
