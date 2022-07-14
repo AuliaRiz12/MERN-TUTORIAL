@@ -16,6 +16,22 @@ if(userExists){
     res.status(400)
     throwEror('User already exists')
 }
+//hash password
+const user = await User.create({
+    name,
+    email,
+    password: hashedPassword
+})
+if(user){
+    res.status(201).json({
+        id: user.id,
+        name: user.name,
+        email: user.email,
+    })
+} else{
+    res.status(400)
+    throw Error ('Invalid user data')
+}
     res.json({Message: "Register User"})
 })
 const loginUser =asyncHandler(async(req,res)=>{
