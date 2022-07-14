@@ -15,8 +15,12 @@ if (!req.body.text){
     res.status (400)
     throw new Error ('Please add a text field')
 }
-res.status(200).json({messege: 'Set Goal'})
+const goal = await Goal.create({
+    text: req.body.text
 })
+res.status(200).json(Goal)
+})
+
 // @desc    Update goals
 // @route   PUT /api/goals/:id
 // @access  Private 
