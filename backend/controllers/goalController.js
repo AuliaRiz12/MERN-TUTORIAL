@@ -47,3 +47,17 @@ module.exports = {
     updateGoal,
     deleteGoal
 }
+
+// @desc  Register user
+// @route POST/api/users
+// @access Public
+const registerUser = (req, res) => {
+    res.json({messege: "Register User"})
+}
+
+// @desc Login user
+// @route POST/api/users/login
+// @access public
+const loginUser = (req,res) => {
+    res.json({message: "Login user"})
+}
