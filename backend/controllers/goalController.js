@@ -61,3 +61,16 @@ const registerUser = (req, res) => {
 const loginUser = (req,res) => {
     res.json({message: "Login user"})
 }
+
+// @desc  Get user data
+// @route Get/api/user/me)
+// @access Public
+const getme =(req,res)=> {
+    res.json({message:"User data display"})
+}
+
+module.exports ={
+    registerUser,
+    loginUser,
+    getMe
+}
