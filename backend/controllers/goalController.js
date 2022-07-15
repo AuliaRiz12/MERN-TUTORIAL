@@ -4,7 +4,11 @@ const Goal = require('../models/goalModel')
 //@route   GET /api/goals
 //@access  Private
 const getGoals = asyncHandler (async(req,res) => {
-        const goals = await Goal.find({user: req. res. id});
+        const goals = await Goal.create({
+            text: req.body.text,
+            user: req.user.id,
+
+        });
     res.status(200).json(goals);
 });
 //@desc    Set goals
